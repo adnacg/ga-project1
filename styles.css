@@ -1,0 +1,282 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  /*font-family: 'Source Sans Pro', sans-serif;*/
+  background-color: #333;
+  background: url(images/texture.jpg);
+}
+
+#watch {
+  display: none;
+  width: 150px;
+  height: 150px;
+  background-color: transparent;
+  /*border: 2px solid #fff;*/
+  border-radius: 50%;
+  transition: 1s ease-in;
+  animation: fadein 1.5s;
+  margin-bottom: -50px;
+  z-index: 20;
+/*  ignores the width of watch to not affect the container position
+  flex-basis: 200px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  animation: 2s ease-in-out 0s 1 slideIn forwards;*/
+}
+
+@keyframes slideIn {
+  0% {
+    transform: rotateZ(180deg);
+  }
+  100% {
+    transform: translate(400px, 550px);
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  width: 1000px;
+  height: 600px;
+  margin: auto;
+  margin-top: 50px;
+  position: relative;
+
+  background: url(images/midnight.jpg);
+  background-size: contain;
+}
+
+.topDiv {
+  position: absolute;
+  top: 0;
+  color: #fff;
+  width: 1000px;
+  height: 100px;
+/*  background-color: #000;
+  opacity: 0.8;*/
+  animation: fadein 2s;
+  padding: 10px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.leftDiv {
+  position: absolute;
+  left: 0;
+  color: #fff;
+  text-align: center;
+  width: 200px;
+  height: 400px;
+/*  background-color: #000;
+  opacity: 0.8;*/
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin: auto;
+}
+
+.centerDiv {
+  position: absolute;
+  color: #fff;
+  width: 600px;
+  height: 400px;
+/*  background-color: #000;
+  opacity: 0.8;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rightDiv {
+  position: absolute;
+  right: 0;
+  color: #fff;
+  width: 200px;
+  height: 400px;
+/*  background-color: #000;*/
+/*  opacity: 0.8;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottomDiv {
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  text-align: right;
+  width: 1000px;
+  height: 100px;
+  animation: fadein 2s;
+  background-color: #000;
+  opacity: 0.8;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 0.8; }
+}
+
+#gameOn {
+  color: #ece20a;
+  text-shadow: 2px 2px 5px #fff;
+}
+
+#gameOn:hover {
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.sceneIntroMsg {
+  height: 200px;
+  width: 400px;
+  background-color: #000;
+  opacity: 0.8;
+  display: none;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  animation: fadein 2s;
+  padding: 10px;
+  z-index: 20;
+}
+
+.nextButton {
+  display: none;
+  cursor: pointer;
+  text-align: center;
+  padding: 20px;
+  font-size: 15px;
+  color: #fff;
+  background-color: #333333;
+  border: 1px solid #D3D3D3;
+  border-radius: 50%;
+  animation: fadein 1s;
+  z-index: 21;
+}
+
+.nextButton:hover {
+  opacity: 0.9;
+}
+
+.userAnswer {
+  display: none;
+  cursor: pointer;
+  text-align: center;
+  padding: 20px;
+  font-size: 15px;
+  color: #fff;
+  background-color: #333333;
+  border: 1px solid #D3D3D3;
+  border-radius: 50%;
+  animation: fadein 1s;
+  margin: 5px;
+}
+
+.userAnswer:hover {
+  opacity: 0.9;
+}
+
+#game-board {
+  display: none;
+  flex-wrap: wrap;
+  width: 1000px;
+  height: 400px;
+  background-color: #000;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.cards {
+  width: 100px;
+  height: 150px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 40px;
+  margin-left: 40px;
+  z-index: 10;
+}
+
+.cards:hover {
+  opacity: 0.8;
+}
+
+#timer {
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+#shape {
+  display: none;
+  position: relative;
+  z-index: 15;
+}
+
+.logos {
+  width: 200px;
+  height: 150px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  margin-left: 20px;
+  z-index: 10;
+}
+
+.logos:hover {
+  opacity: 0.8;
+}
+
+.horses {
+  width: 200px;
+  height: 150px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 50px;
+  margin-left: 50px;
+  z-index: 10;
+}
+
+.horses:hover {
+  opacity: 0.8;
+}
+
+.horseConfirm {
+  border-radius: 50%;
+  cursor: pointer;
+  text-align: center;
+  padding: 10px;
+  font-size: 15px;
+  margin-left: 20px;
+  color: #fff;
+  background-color: #333333;
+}
+
+
+
+
+
+
+
+
+
