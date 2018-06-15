@@ -60,6 +60,7 @@ var runSceneIntroThree = function() {
 
 var runMoulinOne = function() {
     watch.style.display = 'none';
+    watch.style.animation = "";
 
     if (sceneIntroMsg) {
         sceneIntroMsg.innerHTML = 'You wonder around and walk into the Moulin Rouge, as you are amazed by the dancing scene, you spot one of your favourite artists of all time<br><br>- Henri Toulouse-Lautrec!';
@@ -247,8 +248,10 @@ var runGameTwo = function() {
         watch.style.display = 'flex';
         if (win) {
             bottomDiv.innerHTML = 'Degas: You truly can see.';
+            return;
         } else {
             bottomDiv.innerHTML = 'Degas: Well, not all can see, certainly not all can make others see!';
+            return;
         }
     }
 
@@ -466,9 +469,9 @@ var runGameFour = function() {
         watch.style.display = 'flex';
         watch.src = 'images/character/scott.jpg';
         if (win) {
-            bottomDiv.innerHTML = "(The horse won the race!)<br>Scott: Good'ol sport! You're definitely a worthy friend!<br><br>Have you met my friend Hemingway?";
+            bottomDiv.innerHTML = "(The horse won the race!)<br><br>Scott: Good'ol sport! You're definitely a worthy friend!<br>Have you met my friend Hemingway?";
         } else {
-            bottomDiv.innerHTML = "(The horse lost!)<br>Scott: Aw well, such as life...<br>Ah! Oh hey, here's my friend Hemingway!";
+            bottomDiv.innerHTML = "(The horse lost!)<br><br>Scott: Aw well, such as life...<br>Ah! Oh hey, here's my friend Hemingway!";
         }
     }
 
@@ -612,10 +615,10 @@ var runGameFive = function() {
 
 
     var exitGame = function() {
-        // remove elements on board
         hemingwayDiv.parentNode.removeChild(hemingwayDiv);
         buttonDiv.parentNode.removeChild(buttonDiv);
         youDiv.parentNode.removeChild(youDiv);
+        gameBoard.style.display = "none";
         watch.style.display = "flex";
         nextButton.style.display = 'flex';
 
@@ -628,11 +631,11 @@ var runGameFive = function() {
         }
 
         if (fightOutcome == "won") {
-            bottomDiv.innerHTML = "A real man fights! And a greater man like you wins with honour!";
+            bottomDiv.innerHTML = "Hemingway: A real man fights! And a greater man like you wins with honour!";
         } else if (fightOutcome = "lost") {
-            bottomDiv.innerHTML = "Well, at least you fought like a man!";
+            bottomDiv.innerHTML = "Hemingway: Well, at least you fought like a man!";
         } else if (fightOutcome = "draw") {
-            bottomDiv.innerHTML = "It's always a pleasure to meet a man with equal strength!";
+            bottomDiv.innerHTML = "Hemingway: It's always a pleasure to meet a man with equal strength!";
         }
     }
 
@@ -689,11 +692,179 @@ var runGameFive = function() {
 //  CHECK IF TOTAL GAMEWIN IS 2, THEN GO TO NEXT ERA
 // IF GAMEWIN IS 1, GO TO NEXT GAME
 
-var runBarFifteen = function() {
-
+var runRestaurantOne = function() {
+    watch.style.display = "none";
+    topDiv.style.display = "none";
+    bottomDiv.style.display = "none";
+    centerDiv.style.display = "flex";
+    sceneIntroMsg.style.display = 'flex';
+    sceneIntroMsg.innerHTML = "You left the bar and walk aimlessly on the streets...<br><br>You are thinking about what to do next... when a sound coming from a restaurant caught your attention.";
 }
 
+var runRestaurantTwo = function() {
+    centerDiv.style.display = "none";
+    sceneIntroMsg.style.display = 'none';
+    watch.src = "images/character/dali.jpg";
+    watch.style.display = "flex";
+    topDiv.style.display = "flex";
+    bottomDiv.style.display = "flex";
+    bottomDiv.innerHTML = "Dali: Psst psst! Bonjour Monsieur!";
+}
 
+var runRestaurantThree = function() {
+    watch.style.display = "none";
+    bottomDiv.innerHTML = "You: Erm... are you talking to me?";
+}
+
+var runRestaurantFour = function() {
+    watch.style.display = "flex";
+    bottomDiv.innerHTML = "(Dali signals you into the restaurant)<br><br>Dali: Yes! I am Dali! You look lost monsieur, in the city of love, Paris!";
+}
+
+var runRestaurantFive = function() {
+    watch.style.display = "none";
+    bottomDiv.innerHTML = "You: Dali... the painter!?";
+}
+
+var runRestaurantSix = function() {
+    watch.style.display = "flex";
+    bottomDiv.innerHTML = "Dali: Si monsieur, I love French, so magical, it's love! The waiter, no.<br>I am here, to paint the Rhinocerous!<br>I can paint you too, si, you have the very sad eyes... like Rhinocerous!";
+}
+
+var runRestaurantSeven = function() {
+    watch.style.display = "none";
+    bottomDiv.innerHTML = "You: Yes indeed I am! I'm in a very perplexing situation...<br>one where I seem to be present in the past but actually from the future!";
+}
+
+var runRestaurantEight = function() {
+    watch.style.display = "flex";
+    bottomDiv.innerHTML = "(Turns to Man Ray and Luis Bunuel sitting nearby)<br><br>Dali: Ah senior Man Ray and senior Bunuel! My friends!<br>This person said that he is from the future!";
+}
+
+var runRestaurantNine = function() {
+    watch.src = "images/character/manray.png"
+    bottomDiv.innerHTML = "Man Ray: Exactly correct, you've inherit two worlds, like a photograph.<br>So far, I see nothing strange!"
+}
+
+var runRestaurantTen = function() {
+    watch.style.display = "none";
+    bottomDiv.innerHTML = "You: Yeah but that's because you're a surrealist, and I'm a normal guy!<br> I see an insurmountable pain!"
+}
+
+var runRestaurantEleven = function() {
+    watch.style.display = "flex";
+    watch.src = "images/character/luis.jpg";
+    bottomDiv.innerHTML = "Bunuel: I see... a film!"
+}
+
+var runRestaurantTwelve = function() {
+    watch.src = "images/character/dali.jpg";
+    bottomDiv.innerHTML = "Dali: I see a big Rhinocerous!"
+}
+
+var runGameSix = function() {
+    var gameBoard = document.getElementById("game-board");
+    gameBoard.style.display = 'flex';
+    gameBoard.style.alignItems = 'center';
+
+    watch.style.display = "none";
+    nextButton.style.display = "none";
+    bottomDiv.innerHTML = 'What do they see, when you say that you are from the future?<br><br>Select the correct number under the respective artists (Man Ray, Salvador Dali, Luis Bunuel).<input type="button" id="daliGameSubmit" value="Done!"></input>';
+    var win;
+
+    var manrayDiv = document.createElement("div");
+    manrayDiv.className = "daliGameDivs"
+    var manrayImage = document.createElement("img");
+    manrayImage.id = "manrayImage"
+    manrayImage.className = "daliGameImages";
+    manrayImage.src = "images/character/manray.png";
+    manrayDiv.appendChild(manrayImage);
+    var selectOne = document.createElement("select");
+    selectOne.className = "daliGameSelections"
+    var manrayOptionOne = document.createElement("option");
+    var manrayOptionTwo = document.createElement("option");
+    var manrayOptionThree = document.createElement("option");
+    manrayOptionOne.textContent = "1. Rhinocerous";
+    manrayOptionTwo.textContent = "2. Film";
+    manrayOptionThree.textContent = "3. Photograph";
+    selectOne.appendChild(manrayOptionOne);
+    selectOne.appendChild(manrayOptionTwo);
+    selectOne.appendChild(manrayOptionThree);
+    manrayDiv.appendChild(selectOne);
+    gameBoard.appendChild(manrayDiv);
+
+    var daliDiv = document.createElement("div");
+    daliDiv.className = "daliGameDivs"
+    var daliImage = document.createElement("img");
+    daliImage.id = "daliImage"
+    daliImage.className = "daliGameImages";
+    daliImage.src = "images/character/dali.jpg";
+    daliDiv.appendChild(daliImage);
+    var selectTwo = document.createElement("select");
+    selectTwo.className = "daliGameSelections"
+    var daliOptionOne = document.createElement("option");
+    var daliOptionTwo = document.createElement("option");
+    var daliOptionThree = document.createElement("option");
+    daliOptionOne.textContent = "1. Rhinocerous";
+    daliOptionTwo.textContent = "2. Film";
+    daliOptionThree.textContent = "3. Photograph";
+    selectTwo.appendChild(daliOptionOne);
+    selectTwo.appendChild(daliOptionTwo);
+    selectTwo.appendChild(daliOptionThree);
+    daliDiv.appendChild(selectTwo);
+    gameBoard.appendChild(daliDiv);
+
+    var bunuelDiv = document.createElement("div");
+    bunuelDiv.className = "daliGameDivs"
+    var bunuelImage = document.createElement("img");
+    bunuelImage.id = "bunuelImage"
+    bunuelImage.className = "daliGameImages";
+    bunuelImage.src = "images/character/luis.jpg";
+    bunuelDiv.appendChild(bunuelImage);
+    var selectThree = document.createElement("select");
+    selectThree.className = "daliGameSelections"
+    var bunuelOptionOne = document.createElement("option");
+    var bunuelOptionTwo = document.createElement("option");
+    var bunuelOptionThree = document.createElement("option");
+    bunuelOptionOne.textContent = "1. Rhinocerous";
+    bunuelOptionTwo.textContent = "2. Film";
+    bunuelOptionThree.textContent = "3. Photograph";
+    selectThree.appendChild(bunuelOptionOne);
+    selectThree.appendChild(bunuelOptionTwo);
+    selectThree.appendChild(bunuelOptionThree);
+    bunuelDiv.appendChild(selectThree);
+    gameBoard.appendChild(bunuelDiv);
+
+    var exitGame = function() {
+        if (win) {
+            bottomDiv.innerHTML = "Win";
+        } else {
+            bottomDiv.innerHTML = "Lose";
+        }
+    }
+
+    var checkWin = function() {
+        nextButton.style.display = "flex";
+        manrayDiv.style.display = "none";
+        daliDiv.style.display = "none";
+        bunuelDiv.style.display = "none";
+        watch.style.display = "flex";
+        watch.src = "images/character/dali.jpg";
+
+        if (selectOne.selectedOptions[0].value == "3. Photograph" && selectTwo.selectedOptions[0].value == "1. Rhinocerous" && selectThree.selectedOptions[0].value == "2. Film") {
+            win = true;
+            exitGame();
+            return;
+        } else {
+            win = false;
+            exitGame();
+            return;
+        }
+    }
+
+    var submitButton = document.getElementById("daliGameSubmit");
+    submitButton.addEventListener("click", checkWin);
+}
 
 
 
