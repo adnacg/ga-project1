@@ -26,13 +26,13 @@ var runSceneIntroTwo = function() {
 
     sceneIntroMsg.style.backgroundColor = 'transparent';
     sceneIntroMsg.style.color = 'transparent';
+    watch.style.boxShadow = '0 0 90px 1000px #fff, 0 0 200px 300px #ece20a';
 
     var reappear = function() {
-        watch.style.boxShadow = '0 0 90px 1000px #fff, 0 0 200px 300px #ece20a';
         sceneIntroMsg.style.color = '#000';
     }
 
-    setTimeout(reappear, 1000);
+    setTimeout(reappear, 2000);
 }
 
 
@@ -376,6 +376,7 @@ var runGameThree = function() {
 }
 
 var runChangeEra = function() {
+    topDiv.style.display = 'none';
     bottomDiv.style.display = 'none';
     bottomDiv.innerHTML = '';
     watch.src = 'images/watch.jpg';
@@ -401,6 +402,7 @@ var runBarOne = function() {
     centerDiv.style.display = 'none';
     sceneIntroMsg.innerHTML = '';
     watch.src = 'images/character/scott.jpg';
+    topDiv.style.display = 'flex';
     bottomDiv.style.display = 'flex';
     bottomDiv.innerHTML = 'Scott: Hello my friend , you seem lost, are you lost?';
 }
@@ -438,6 +440,7 @@ var runBarSeven = function() {
 
 var runGameFour = function() {
     nextButton.style.display = 'none';
+
     var gameBoard = document.getElementById("game-board");
     gameBoard.style.display = 'flex';
     var win = false;
@@ -454,6 +457,7 @@ var runGameFour = function() {
 
     var exitGame = function() {
         nextButton.style.display = 'flex';
+
         allHorses.forEach(function(horse) {
             horse.parentNode.removeChild(horse);
         })
@@ -464,7 +468,7 @@ var runGameFour = function() {
         if (win) {
             bottomDiv.innerHTML = "(The horse won the race!)<br>Scott: Good'ol sport! You're definitely a worthy friend!<br><br>Have you met my friend Hemingway?";
         } else {
-            bottomDiv.innerHTML = "(The horse lost!)<br>Scott: Aw well, such as life...<br>Ah! Here's my friend Hemingway!";
+            bottomDiv.innerHTML = "(The horse lost!)<br>Scott: Aw well, such as life...<br>Ah! Oh hey, here's my friend Hemingway!";
         }
     }
 
@@ -494,10 +498,200 @@ var runGameFour = function() {
     })
 }
 
+var runBarEight = function() {
+    watch.style.display = 'none';
+    bottomDiv.innerHTML = 'You: Oh Mr. Hemingway! I am such a fan.<br>Tell me, how do you write so well?';
+}
+
+var runBarNine = function() {
+    watch.style.display = 'flex';
+    watch.src = "images/character/hemingway.jpg";
+    bottomDiv.innerHTML = "Hemingway: You will never write well if you fear dying.<br>Do you fear death?";
+}
+
+var runBarTen = function() {
+    watch.style.display = 'none';
+    bottomDiv.innerHTML = 'You: I supposed I do...';
+}
+
+var runBarEleven = function() {
+    watch.style.display = 'flex';
+    bottomDiv.innerHTML = "Hemingway: Well that's something all men before you have done, and all men will do!";
+}
+
+var runBarTwelve = function() {
+    bottomDiv.innerHTML = "Hemingway: Tell me, my friend. Do you box?";
+}
+
+var runBarThirteen = function() {
+    watch.style.display = 'none';
+    bottomDiv.innerHTML = "You: What...? I supposed I do too.";
+}
+
+var runBarFourteen = function() {
+    watch.style.display = 'flex';
+    bottomDiv.innerHTML = "Hemingway: Let's put the gloves on and settle it then!";
+}
+
+var runGameFive = function() {
+    watch.style.display = "none";
+    nextButton.style.display = 'none';
+
+    var gameBoard = document.getElementById("game-board");
+    gameBoard.style.display = 'flex';
+    gameBoard.style.alignItems = 'center';
+    bottomDiv.innerHTML = 'Hemingway: Let us fight like a real man!';
+
+    var fightOutcome = false;
+    var hemingwayHP = 100;
+    var userHP = 100;
+    var freezeButtons = false;
+
+    var hemingwayDiv = document.createElement("div");
+    hemingwayDiv.className = "imageDiv"
+
+    var hemingwayImage = document.createElement("img");
+    hemingwayImage.id = "hemingwayImage"
+    hemingwayImage.className = "fightImages";
+    hemingwayImage.src = "images/character/hemingway.jpg";
+    hemingwayDiv.appendChild(hemingwayImage);
+    var hemingwayHPMsg = document.createElement("p");
+    hemingwayHPMsg.className = "showHPMsg"
+    hemingwayHPMsg.innerHTML = "Hemingway's HP: ";
+    hemingwayDiv.appendChild(hemingwayHPMsg);
+    var actualHmwHP = document.createElement("p");
+    actualHmwHP.className = "actualHP"
+    actualHmwHP.innerHTML = hemingwayHP + " / 100";
+    hemingwayDiv.appendChild(actualHmwHP);
+
+    gameBoard.appendChild(hemingwayDiv);
+
+    var buttonDiv = document.createElement("div");
+    buttonDiv.id = "buttonDiv"
+
+    var jabButton = document.createElement("input");
+    jabButton.type = "button";
+    jabButton.value = "Jab";
+    jabButton.className = "fightButtons";
+    buttonDiv.appendChild(jabButton);
+
+    var crossButton = document.createElement("input");
+    crossButton.type = "button";
+    crossButton.value = "Cross";
+    crossButton.className = "fightButtons";
+    buttonDiv.appendChild(crossButton);
+
+    var hookButton = document.createElement("input");
+    hookButton.type = "button";
+    hookButton.value = "Hook";
+    hookButton.className = "fightButtons";
+    buttonDiv.appendChild(hookButton);
+
+    gameBoard.appendChild(buttonDiv);
+
+    var fightButtonsArray = document.querySelectorAll(".fightButtons");
+
+    var youDiv = document.createElement("div");
+    youDiv.className = "imageDiv"
+
+    var youImage = document.createElement("img");
+    youImage.id = "youImage"
+    youImage.className = "fightImages";
+    youImage.src = "images/character/you.jpg";
+    youDiv.appendChild(youImage);
+    var yourHPMsg = document.createElement("p");
+    yourHPMsg.className = "showHPMsg"
+    yourHPMsg.innerHTML = "Your HP: ";
+    youDiv.appendChild(yourHPMsg);
+    var actualHP = document.createElement("p");
+    actualHP.className = "actualHP"
+    actualHP.innerHTML = userHP + " / 100";
+    youDiv.appendChild(actualHP);
+
+    gameBoard.appendChild(youDiv);
 
 
+    var exitGame = function() {
+        // remove elements on board
+        hemingwayDiv.parentNode.removeChild(hemingwayDiv);
+        buttonDiv.parentNode.removeChild(buttonDiv);
+        youDiv.parentNode.removeChild(youDiv);
+        watch.style.display = "flex";
+        nextButton.style.display = 'flex';
 
+        if (userHP <= 0 && hemingwayHP <= 0) {
+            fightOutcome = "draw";
+        } else if (userHP <= 0) {
+            fightOutcome = "lost";
+        } else if (hemingwayHP <= 0) {
+            fightOutcome = "won";
+        }
 
+        if (fightOutcome == "won") {
+            bottomDiv.innerHTML = "A real man fights! And a greater man like you wins with honour!";
+        } else if (fightOutcome = "lost") {
+            bottomDiv.innerHTML = "Well, at least you fought like a man!";
+        } else if (fightOutcome = "draw") {
+            bottomDiv.innerHTML = "It's always a pleasure to meet a man with equal strength!";
+        }
+    }
+
+    var hitHmw = function() {
+        if (freezeButtons) {
+            return;
+        }
+
+        freezeButtons = true;
+
+        var randomHPToHemingway = Math.floor(Math.random() * 15 + 1) ;
+        hemingwayHP -= randomHPToHemingway;
+        hemingwayImage.style.animation = "shake 0.2s";
+        actualHmwHP.innerHTML = hemingwayHP + " / 100";
+
+        if (hemingwayHP > 0) {
+            bottomDiv.innerHTML = "You " + this.value + " Hemingway with " + randomHPToHemingway + " points!";
+            hemingwayImage.style.opacity = "1";
+            youImage.style.opacity = "0.3";
+            setTimeout(function() {hemingwayImage.style.animation = "";}, 500);
+        } else {
+            exitGame();
+            return;
+        }
+
+        setTimeout(function() {
+            var randomHPToYou = Math.floor(Math.random() * 10 + 1);
+
+            userHP -= randomHPToYou;
+            youImage.style.animation = "shake 0.2s";
+            actualHP.innerHTML = userHP + " / 100";
+            if (userHP > 0) {
+                bottomDiv.innerHTML = "Hemingway hit you back with " + randomHPToYou + " points!";
+                hemingwayImage.style.opacity = "0.3";
+                youImage.style.opacity = "1";
+                setTimeout(function() {youImage.style.animation = "";}, 500);
+                freezeButtons = false;
+            } else {
+                exitGame();
+                return;
+            }
+        }, 1000);
+    }
+
+    youImage.style.opacity = "1";
+    hemingwayImage.style.opacity = "0.3";
+
+    fightButtonsArray.forEach(function(button) {
+        button.addEventListener("click", hitHmw);
+    })
+}
+
+// IF GAMEWIN IS 0, GAME END
+//  CHECK IF TOTAL GAMEWIN IS 2, THEN GO TO NEXT ERA
+// IF GAMEWIN IS 1, GO TO NEXT GAME
+
+var runBarFifteen = function() {
+
+}
 
 
 

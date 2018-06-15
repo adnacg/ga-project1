@@ -29,4 +29,22 @@ var scenesList = {
     "barSix": new Scene("barSeven", runBarSix),
     "barSeven": new Scene("gameFour", runBarSeven),
     "gameFour": new Scene("barEight", runGameFour),
+    "barEight": new Scene("barNine", runBarEight),
+    "barNine": new Scene("barTen", runBarNine),
+    "barTen": new Scene("barEleven", runBarTen),
+    "barEleven": new Scene("barTwelve", runBarEleven),
+    "barTwelve": new Scene("barThirteen", runBarTwelve),
+    "barThirteen": new Scene("barFourteen", runBarThirteen),
+    "barFourteen": new Scene("gameFive", runBarFourteen),
+    "gameFive": new Scene("barFifteen", runGameFive),
+
+
+
+
+
 }
+
+
+
+
+
