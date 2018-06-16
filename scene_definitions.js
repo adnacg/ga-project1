@@ -1,8 +1,45 @@
-function Scene(nextSceneId, runSceneFunction) {
-    this.nextSceneId = nextSceneId;
-    this.runScene = runSceneFunction;
+function Character(name, era, picture) {
+    this.name = name;
+    this.era = era;
+    this.picture = picture;
 }
 
+function Era(name, next) {
+    this.name = name;
+    this.next = next;
+}
+
+function Scene(name, era, backgroundImage, next) {
+    this.name = name;
+    this.era = era;
+    this.backgroundImage = backgroundImage;
+    this.next = next;
+
+    this.setup = function() {
+        container.style.background = "url(" + this.backgroundImage + ")";
+    }
+}
+
+function Dialogue(sentence, scene, next, character, location, run) {
+    this.sentence = sentence;
+    this.scene = scene;
+    this.next = next;
+    this.character = character;
+    this.location = location;
+
+    this.run = run;
+}
+
+// function Scene(nextSceneId, runSceneFunction) {
+//     this.nextSceneId = nextSceneId;
+//     this.runScene = runSceneFunction;
+// }
+
+
+
+// var erasList = {
+// var scenesList = {
+// var dialoguesList = {
 var scenesList = {
     "enterGame": new Scene("sceneIntroOne", enterGame),
     "sceneIntroOne": new Scene("sceneIntroTwo", runSceneIntroOne),
