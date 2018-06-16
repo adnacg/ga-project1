@@ -26,6 +26,7 @@ var runSceneIntroTwo = function() {
 
     sceneIntroMsg.style.backgroundColor = 'transparent';
     sceneIntroMsg.style.color = 'transparent';
+    watch.style.backgroundColor = '#fff';
     watch.style.boxShadow = '0 0 90px 1000px #fff, 0 0 200px 300px #ece20a';
 
     var reappear = function() {
@@ -38,12 +39,14 @@ var runSceneIntroTwo = function() {
 
 var runSceneIntroThree = function() {
     if (sceneIntroMsg) {
-        sceneIntroMsg.innerHTML = 'As you start to open your eyes again,<br>the surrounding seems... different!<br><br>Feeling puzzled, you look at the watch.<br>Instead of time, it is showing 1890!';
+        sceneIntroMsg.innerHTML = 'As you start to open your eyes again,<br>the surrounding seems... different!<br><br>Feeling puzzled, you look at the watch.<br>It looks like it is showing... 1890!?';
     }
 
     container.style.background = 'url(images/renaissance.png)';
     sceneIntroMsg.style.color = 'transparent';
-    watch.style.boxShadow = '0 0 40px 10px #fff';
+    watch.style.backgroundColor = 'transparent';
+    watch.style.boxShadow = "";
+    watch.src = 'images/watch_belle_epoque_start.png';
 
     var reappear = function() {
         sceneIntroMsg.style.backgroundColor = '#000';
@@ -80,6 +83,7 @@ var runMoulinTwo = function() {
 
 var runMoulinThree = function() {
     watch.style.display = 'flex';
+    watch.style.boxShadow = '0 0 40px 10px #fff';
     watch.src = 'images/character/henri.jpg';
     bottomDiv.innerHTML = "Henri: I paint things as they are. A woman's body is not made for love, it is too exquisite!<br><br>You: I agree.";
 }
@@ -169,7 +173,7 @@ var runGameOne = function() {
             matchCount++;
         } else {
             bottomDiv.innerHTML = 'Henri: Try harder...';
-            setTimeout(showBack, 1000);
+            setTimeout(showBack, 500);
         }
         cardsInPlay = [];
 
@@ -382,14 +386,17 @@ var runChangeEra = function() {
     topDiv.style.display = 'none';
     bottomDiv.style.display = 'none';
     bottomDiv.innerHTML = '';
-    watch.src = 'images/watch.jpg';
+    watch.style.backgroundColor = "#fff";
+    watch.src = 'images/watch_belle_epoque_end.png';
     watch.style.boxShadow = '0 0 90px 1000px #fff, 0 0 200px 300px #ece20a';
     nextButton.style.display = 'flex';
 }
 
 var runChangeEraMsg = function() {
     container.style.background = 'url(images/1920.jpg)';
-    watch.style.boxShadow = '0 0 40px 10px #fff';
+    watch.style.backgroundColor = "transparent";
+    watch.style.boxShadow = "";
+    watch.src = 'images/watch_twenties_start.png';
     var reappear = function() {
         centerDiv.style.display = 'flex';
         sceneIntroMsg.innerHTML = 'The watch shines again...!<br>This time, you see that the watchface seems to be a little different.<br><br>Wait... why are you in a bar?<br>Is it... 1920!?';
@@ -404,6 +411,7 @@ var runChangeEraMsg = function() {
 var runBarOne = function() {
     centerDiv.style.display = 'none';
     sceneIntroMsg.innerHTML = '';
+    watch.style.boxShadow = '0 0 40px 10px #fff';
     watch.src = 'images/character/scott.jpg';
     topDiv.style.display = 'flex';
     bottomDiv.style.display = 'flex';
@@ -836,21 +844,22 @@ var runGameSix = function() {
     gameBoard.appendChild(bunuelDiv);
 
     var exitGame = function() {
-        if (win) {
-            bottomDiv.innerHTML = "Win";
-        } else {
-            bottomDiv.innerHTML = "Lose";
-        }
-    }
-
-    var checkWin = function() {
         nextButton.style.display = "flex";
         manrayDiv.style.display = "none";
         daliDiv.style.display = "none";
         bunuelDiv.style.display = "none";
         watch.style.display = "flex";
         watch.src = "images/character/dali.jpg";
+        gameBoard.style.display = "none";
 
+        if (win) {
+            bottomDiv.innerHTML = "Dali: Yes... yes! I see... a Rhinocerous!";
+        } else {
+            bottomDiv.innerHTML = "Dali: You are probably not... a Rhinocerous!";
+        }
+    }
+
+    var checkWin = function() {
         if (selectOne.selectedOptions[0].value == "3. Photograph" && selectTwo.selectedOptions[0].value == "1. Rhinocerous" && selectThree.selectedOptions[0].value == "2. Film") {
             win = true;
             exitGame();
@@ -866,6 +875,54 @@ var runGameSix = function() {
     submitButton.addEventListener("click", checkWin);
 }
 
+var runChangeEraTwo = function() {
+    topDiv.style.display = 'none';
+    bottomDiv.style.display = 'none';
+    bottomDiv.innerHTML = '';
+    watch.src = 'images/watch_twenties_end.png';
+    watch.style.backgroundColor = "#fff";
+    watch.style.boxShadow = '0 0 90px 1000px #fff, 0 0 200px 300px #ece20a';
+    nextButton.style.display = 'flex';
+}
 
+var runChangeEraTwoMsg = function() {
+    container.style.background = 'url(images/paris.png)';
+    watch.style.backgroundColor = "transparent";
+    watch.style.boxShadow = "";
+    watch.src = 'images/watch_end.png';
+    var reappear = function() {
+        centerDiv.style.display = 'flex';
+        sceneIntroMsg.innerHTML = 'The watch shines again and now... what?!<br>you are back on the streets in the present Paris.<br><br>As you ponder what just happened... the rain started drizzling down from the sky.';
+    }
+    setTimeout(reappear, 2000);
+}
+
+var runEndingOne = function() {
+    topDiv.style.display = 'flex';
+    bottomDiv.style.display = 'flex';
+    watch.style.boxShadow = '0 0 40px 10px #fff';
+    watch.src = 'images/character/stranger.jpg';
+    bottomDiv.innerHTML = '(A girl approached you.)<br><br>Parisian Girl: Hello... would you like me to share the umbrella with me?';
+}
+
+var runEndingTwo = function() {
+    watch.style.display = "none";
+    bottomDiv.innerHTML = "You: oh yes... thank you so much!<br>Who would've known that rain comes so suddenly...";
+}
+
+var runEndingThree = function() {
+    watch.style.display = "flex";
+    bottomDiv.innerHTML = "Parisian Girl: Yes, but I like to walk under the rain sometimes.<br><br>Paris is the most beautiful in the rain.";
+}
+
+var runEndingFour = function() {
+    watch.style.display = "none";
+    topDiv.style.display = 'none';
+    bottomDiv.style.display = 'none';
+    nextButton.style.display = 'none';
+    centerDiv.style.display = 'flex';
+    sceneIntroMsg.style.display = "flex";
+    sceneIntroMsg.innerHTML = "The End";
+}
 
 

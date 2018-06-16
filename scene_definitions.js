@@ -37,7 +37,6 @@ var scenesList = {
     "barThirteen": new Scene("barFourteen", runBarThirteen),
     "barFourteen": new Scene("gameFive", runBarFourteen),
     "gameFive": new Scene("restaurantOne", runGameFive),
-
     "restaurantOne": new Scene("restaurantTwo", runRestaurantOne),
     "restaurantTwo": new Scene("restaurantThree", runRestaurantTwo),
     "restaurantThree": new Scene("restaurantFour", runRestaurantThree),
@@ -50,11 +49,14 @@ var scenesList = {
     "restaurantTen": new Scene("restaurantEleven", runRestaurantTen),
     "restaurantEleven": new Scene("restaurantTwelve", runRestaurantEleven),
     "restaurantTwelve": new Scene("gameSix", runRestaurantTwelve),
-    "gameSix": new Scene("restaurantThirteen", runGameSix),
+    "gameSix": new Scene("changeEraTwo", runGameSix),
 
-
-
-
+    "changeEraTwo": new Scene("changeEraTwoMsg", runChangeEraTwo),
+    "changeEraTwoMsg": new Scene("endingOne", runChangeEraTwoMsg),
+    "endingOne": new Scene("endingTwo", runEndingOne),
+    "endingTwo": new Scene("endingThree", runEndingTwo),
+    "endingThree": new Scene("endingFour", runEndingThree),
+    "endingFour": new Scene("", runEndingFour),
 
 }
 
