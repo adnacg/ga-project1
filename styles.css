@@ -21,18 +21,27 @@ body {
   width: 200px;
   height: 200px;
   background-color: transparent;
-  /*border: 2px solid #fff;*/
   border-radius: 50%;
   transition: 1s ease-in;
   animation: fadein 1.5s;
   margin-bottom: -50px;
   margin-left: 20px;
   z-index: 20;
-/*  ignores the width of watch to not affect the container position
-  flex-basis: 200px;
-  flex-grow: 0;
-  flex-shrink: 0;
-  animation: 2s ease-in-out 0s 1 slideIn forwards;*/
+}
+
+#characterImg {
+  display: none;
+  width: 200px;
+  height: 200px;
+  background-color: transparent;
+  border-radius: 50%;
+  transition: 1s ease-in;
+  animation: fadein 1.5s;
+  margin-bottom: -50px;
+  margin-left: 20px;
+  z-index: 20;
+  box-shadow: 0 0 40px 10px #fff;
+
 }
 
 @keyframes slideIn {
@@ -78,6 +87,9 @@ body {
   display: none;
   justify-content: center;
   align-items: center;
+  background-color: #000;
+  opacity: 0.8;
+
 }
 
 .leftDiv {
@@ -172,8 +184,8 @@ body {
   text-align: center;
   padding: 20px;
   font-size: 15px;
-  color: #fff;
-  background-color: #333333;
+  color: #000;
+  background-color: #ddce5d;
   border: 1px solid #D3D3D3;
   border-radius: 50%;
   animation: fadein 1s;
@@ -181,6 +193,25 @@ body {
 }
 
 .nextButton:hover {
+  opacity: 0.9;
+}
+
+.restartButton {
+  font-family: 'Fondamento', cursive;
+  display: none;
+  cursor: pointer;
+  text-align: center;
+  padding: 20px;
+  font-size: 15px;
+  color: #000;
+  background-color: #ddce5d;
+  border: 1px solid #D3D3D3;
+  border-radius: 50%;
+  animation: fadein 1s;
+  z-index: 21;
+}
+
+.restartButton:hover {
   opacity: 0.9;
 }
 
