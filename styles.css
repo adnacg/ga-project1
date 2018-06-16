@@ -5,10 +5,12 @@
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
+  /*font-family: 'Open Sans', sans-serif;*/
   /*font-family: 'Source Sans Pro', sans-serif;*/
+  font-family: 'Fondamento', cursive;
+  letter-spacing: 2px;
+  font-size: 18px;
+  font-weight: 400;
   background-color: #333;
   background: url(images/texture.jpg);
   background-repeat: no-repeat;
@@ -145,12 +147,12 @@ body {
 
 #gameOn:hover {
   cursor: pointer;
-  font-size: 16px;
+  font-size: 21px;
 }
 
 .sceneIntroMsg {
-  height: 200px;
-  width: 400px;
+  height: 350px;
+  width: 500px;
   background-color: #000;
   opacity: 0.8;
   display: none;
@@ -164,6 +166,7 @@ body {
 }
 
 .nextButton {
+  font-family: 'Fondamento', cursive;
   display: none;
   cursor: pointer;
   text-align: center;

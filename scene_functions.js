@@ -5,24 +5,24 @@
 
 var enterGame = function() {
     bottomDiv.style.display = 'none';
-    sceneIntroMsg.innerHTML = 'Strolling along the seemingly endless streets in Paris,<br>you are in deep thoughts about the disatisfactions of the present.<br><br>You pass by a nostagic antique store and are drawn to enter it...<br><br>and you did...';
+    sceneIntroMsg.innerHTML = "Strolling aimlessly along the streets of Paris after nightfall, you are deep within your thoughts when you come by an open antiques shop.<br><br>Intrigued by the late opening hour, you decide to enter and have a look...";
     sceneIntroMsg.style.display = 'flex';
     nextButton.style.display = 'flex';
 }
 
-
 var runSceneIntroOne = function() {
-    if (sceneIntroMsg) {
-        sceneIntroMsg.innerHTML = 'You are attracted to a particular old pocket watch...<br><br>So you buy it... and leave the store.';
-    }
-    watch.style.display = 'flex';
+    sceneIntroMsg.innerHTML = "After going through the narrow aisles you are about to leave, when an object catches your eye.<br><br>It is a pocket watch of peculiar design, which somehow appeals to you. Although unsure why, you decide to buy it, and leave the store.";
+    container.style.background = 'url(images/antiqueshop.jpg)';
+    setTimeout(function() {watch.style.display = 'flex'}, 2000);
 }
 
-
 var runSceneIntroTwo = function() {
-    if (sceneIntroMsg) {
-        sceneIntroMsg.innerHTML = 'As you walk out of the store, the watch suddenly shines so bright that you have to shut your eyes!';
-    }
+    sceneIntroMsg.innerHTML = "As you exit the store and start walking away, you cannot stop looking at your purchase.<br><br>It has a button on its side, and seems to have no crown to wind and adjust the time.<br>Most surprisingly, there are four hands instead of the usual two or three, and the numerals span from 0 to 9.<br><br>You click on the button to see what it does, when suddenly...";
+    container.style.background = 'url(images/midnight.jpg)';
+}
+
+var runSceneIntroThree = function() {
+    sceneIntroMsg.innerHTML = 'A bright light coming from the watch blinds you momentarily!';
 
     sceneIntroMsg.style.backgroundColor = 'transparent';
     sceneIntroMsg.style.color = 'transparent';
@@ -36,11 +36,8 @@ var runSceneIntroTwo = function() {
     setTimeout(reappear, 2000);
 }
 
-
-var runSceneIntroThree = function() {
-    if (sceneIntroMsg) {
-        sceneIntroMsg.innerHTML = 'As you start to open your eyes again,<br>the surrounding seems... different!<br><br>Feeling puzzled, you look at the watch.<br>It looks like it is showing... 1890!?';
-    }
+var runSceneIntroFour = function() {
+    sceneIntroMsg.innerHTML = "As you open your eyes again, you realize the surroundings totally changed!<br><br>Everything seems.. out of time, from the way people dress to the conversations you hear.<br><br>Looking at the watch, you notice that the discs on its face seem to have retracted and the hands changed position.";
 
     container.style.background = 'url(images/renaissance.png)';
     sceneIntroMsg.style.color = 'transparent';
@@ -56,6 +53,10 @@ var runSceneIntroThree = function() {
     setTimeout(reappear, 2000);
 }
 
+var runSceneIntroFive = function() {
+    sceneIntroMsg.innerHTML = "0, 1, 9, 8? 1, 9, 0, 8?<br>Oh, the length of the hands seem so matter...<br><br>1... 8... 9... 0... 1890! This is a year!<br><br>Surely there is no way this watch is some kind of.. time machine?!<br>Maybe you have been knocked out in the street and this is some kind of dream.<br><br>Whatever the explanation, you decide to make the most of this experience.";
+}
+
 
 ///////////////////////////////////////////////////////////////////
 // BELLE EPOQUE SCENES
@@ -65,9 +66,7 @@ var runMoulinOne = function() {
     watch.style.display = 'none';
     watch.style.animation = "";
 
-    if (sceneIntroMsg) {
-        sceneIntroMsg.innerHTML = 'You wonder around and walk into the Moulin Rouge, as you are amazed by the dancing scene, you spot one of your favourite artists of all time<br><br>- Henri Toulouse-Lautrec!';
-    }
+    sceneIntroMsg.innerHTML = "As you wander around, you find out you are inside the famous Moulin Rouge.<br><br>After starring amazed at the dancing scene, you cannot believe your eyes when you spot one of your favourite artists of all time:<br><br>painter Henri Toulouse-Lautrec!";
 }
 
 var runMoulinTwo = function() {
