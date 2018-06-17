@@ -1,0 +1,12 @@
+var henri = new Character("Henri", "images/character/henri.jpg");
+var degas = new Character("Degas", "images/character/degas.jpg");
+var gauguin = new Character("Gauguin", "images/character/gauguin.jpg");
+var coco = new Character("Chanel", "images/character/coco.jpg");
+var manray = new Character("Man Ray", "images/character/manray.png");
+var you = new Character("You", "images/character/you.jpg");
+var dali = new Character("Dali", "images/character/dali.jpg");
+var hemingway = new Character("Hemingway", "images/character/hemingway.jpg");
+var luis = new Character("Bunuel", "images/character/luis.jpg");
+var scott = new Character("Scott", "images/character/scott.jpg");
+var zelda = new Character("Zelda", "images/character/zelda.jpg");
+var gabrielle = new Character("Gabrielle", "images/character/gabrielle.jpg");

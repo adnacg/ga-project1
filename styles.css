@@ -5,13 +5,11 @@
 }
 
 body {
-  /*font-family: 'Open Sans', sans-serif;*/
-  /*font-family: 'Source Sans Pro', sans-serif;*/
   font-family: 'Fondamento', cursive;
   letter-spacing: 2px;
   font-size: 18px;
   font-weight: 400;
-  background-color: #333;
+  background-color: #D5BF86;
   background: url(images/texture.jpg);
   background-repeat: no-repeat;
 }
@@ -21,18 +19,27 @@ body {
   width: 200px;
   height: 200px;
   background-color: transparent;
-  /*border: 2px solid #fff;*/
   border-radius: 50%;
   transition: 1s ease-in;
   animation: fadein 1.5s;
   margin-bottom: -50px;
   margin-left: 20px;
   z-index: 20;
-/*  ignores the width of watch to not affect the container position
-  flex-basis: 200px;
-  flex-grow: 0;
-  flex-shrink: 0;
-  animation: 2s ease-in-out 0s 1 slideIn forwards;*/
+}
+
+#characterImg {
+  display: none;
+  width: 200px;
+  height: 200px;
+  background-color: transparent;
+  border-radius: 50%;
+  transition: 1s ease-in;
+  animation: fadein 1.5s;
+  margin-bottom: -50px;
+  margin-left: 20px;
+  z-index: 20;
+  box-shadow: 0 0 40px 10px #fff;
+
 }
 
 @keyframes slideIn {
@@ -60,7 +67,6 @@ body {
   margin: auto;
   margin-top: 50px;
   position: relative;
-
   background: url(images/midnight.jpg);
   background-size: contain;
 }
@@ -68,27 +74,25 @@ body {
 .topDiv {
   position: absolute;
   top: 0;
-  color: #fff;
+  color: #D5BF86;
   width: 1000px;
   height: 100px;
-/*  background-color: #000;
-  opacity: 0.8;*/
   animation: fadein 2s;
   padding: 10px;
   display: none;
   justify-content: center;
   align-items: center;
+  background-color: #000;
+  opacity: 0.8;
+
 }
 
 .leftDiv {
   position: absolute;
   left: 0;
-  color: #fff;
   text-align: center;
   width: 200px;
   height: 400px;
-/*  background-color: #000;
-  opacity: 0.8;*/
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -97,11 +101,9 @@ body {
 
 .centerDiv {
   position: absolute;
-  color: #fff;
+  color: #D5BF86;
   width: 600px;
   height: 400px;
-/*  background-color: #000;
-  opacity: 0.8;*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,11 +112,8 @@ body {
 .rightDiv {
   position: absolute;
   right: 0;
-  color: #fff;
   width: 200px;
   height: 400px;
-/*  background-color: #000;*/
-/*  opacity: 0.8;*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -123,7 +122,7 @@ body {
 .bottomDiv {
   position: absolute;
   bottom: 0;
-  color: #fff;
+  color: #D5BF86;
   text-align: right;
   width: 1000px;
   height: 100px;
@@ -141,7 +140,7 @@ body {
 }
 
 #gameOn {
-  color: #ece20a;
+  color: #D5BF86;
   text-shadow: 2px 2px 5px #fff;
 }
 
@@ -156,7 +155,7 @@ body {
   background-color: #000;
   opacity: 0.8;
   display: none;
-  color: #fff;
+  color: #D5BF86;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -171,16 +170,37 @@ body {
   cursor: pointer;
   text-align: center;
   padding: 20px;
-  font-size: 15px;
-  color: #fff;
-  background-color: #333333;
-  border: 1px solid #D3D3D3;
+  font-size: 18px;
+  color: #000;
+  background-color: #D5BF86;
+  border: 1px solid #000;
   border-radius: 50%;
   animation: fadein 1s;
   z-index: 21;
+  box-shadow: 0 0 40px 10px #fff;
 }
 
 .nextButton:hover {
+  opacity: 0.9;
+}
+
+.restartButton {
+  font-family: 'Fondamento', cursive;
+  display: none;
+  cursor: pointer;
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  color: #000;
+  background-color: #D5BF86;
+  border: 1px solid #000;
+  border-radius: 50%;
+  animation: fadein 1s;
+  z-index: 21;
+  box-shadow: 0 0 40px 10px #fff;
+}
+
+.restartButton:hover {
   opacity: 0.9;
 }
 
@@ -275,15 +295,16 @@ body {
 }
 
 .horseConfirm {
-  border: 1px solid #fff;
+  font-family: 'Fondamento', cursive;
+  border: 1px solid #D5BF86;
   border-radius: 50%;
   cursor: pointer;
   text-align: center;
   padding: 10px;
   font-size: 15px;
   margin-left: 20px;
-  color: #fff;
-  background-color: #333333;
+  color: #000;
+  background-color: #D5BF86;
 }
 
 .horseConfirm:active {
@@ -305,14 +326,14 @@ body {
 }
 
 .showHPMsg {
-  color: #fff;
+  color: #D5BF86;
   margin-top: 20px;
   width: 150px;
   text-align: center;
 }
 
 .actualHP {
-  color: #fff;
+  color: #D5BF86;
   margin-top: 20px;
   width: 150px;
   text-align: center;
@@ -323,14 +344,15 @@ body {
 }
 
 .fightButtons {
+  font-family: 'Fondamento', cursive;
   display: block;
-  border: 1px solid #D3D3D3;
+  border: 1px solid #D5BF86;
   border-radius: 5px;
   cursor: pointer;
   width: 100px;
   height: 35px;
   font-size: 15px;
-  color: #fff;
+  color: #D5BF86;
   background-color: #89341f;
   margin-top: 20px;
 }
@@ -371,23 +393,27 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
   border-radius: 50%;
-  border: 5px solid #fff;
+  border: 2px solid #D5BF86;
 }
 
 .daliGameSelections {
+  font-family: 'Fondamento', cursive;
   z-index: 25;
-  font-size: 15px;
+  font-size: 18px;
+  height: 30px;
+  background-color: #D5BF86;
 }
 
 #daliGameSubmit {
+  font-family: 'Fondamento', cursive;
   z-index: 25;
   cursor: pointer;
   text-align: center;
   padding: 10px;
-  font-size: 15px;
-  color: #fff;
-  background-color: #333333;
-  border: 1px solid #D3D3D3;
+  font-size: 18px;
+  color: #000;
+  background-color: #D5BF86;
+  border: 1px solid #D5BF86;
   border-radius: 50%;
   margin-left: 20px;
 }

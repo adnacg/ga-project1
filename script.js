@@ -1,52 +1,69 @@
-var lastSceneTransition = new Date();
+currentEraIdx = 0;
+currentSceneIdx = 0;
+currentDialogueIdx = -1;
 
-// reference to each div (for easy access)
-var container = document.getElementById('container');
-var topDiv = document.querySelector('.topDiv');
-var leftDiv = document.querySelector('.leftDiv');
-var centerDiv = document.querySelector('.centerDiv');
-var rightDiv = document.querySelector('.rightDiv');
-var bottomDiv = document.querySelector('.bottomDiv');
-var watch = document.getElementById('watch');
+var gameStep = function() {
+    if (!freezeNextButton) {
 
-// create placeholder for scene introduction messages to player
-var sceneIntroMsg = document.createElement('p');
-sceneIntroMsg.className = 'sceneIntroMsg';
-sceneIntroMsg.style.display = "none";
-centerDiv.appendChild(sceneIntroMsg);
+        freezeNextButton = true;
+        nextButton.style.color = "#D5BF86";
+        setTimeout(function() {
+            freezeNextButton = false;
+            nextButton.style.color = "#000";
+        }, buttonDelay);
 
-var firstGameWin = 0;
-var secondGameWin = 0;
-var thirdGameWin = 0;
+        var currentEra = eras[currentEraIdx];
+        var currentScene = currentEra.scenes[currentSceneIdx];
+        var currentDialogue = currentScene.dialogues[currentDialogueIdx];
 
-var currentScene = scenesList["enterGame"];
-var setNextScene = function() {
-    var currentTime = new Date();
-    if ((currentTime.getTime() - lastSceneTransition.getTime()) > 2000) {
-        currentScene = scenesList[currentScene.nextSceneId];
-        currentScene.runScene();
-        lastSceneTransition = currentTime;
+        // Clear all elements created by previous dialogue
+        if (currentDialogueIdx >= 0) {
+            currentDialogue.clear();
+            if(currentDialogue.deleteCustomElements) {
+                currentDialogue.deleteCustomElements();
+            }
+        } else {
+            bottomDiv.style.display = 'none';
+            nextButton.style.display = 'flex';
+        }
+
+        // Update the "current" dialogue
+        currentDialogueIdx++;
+        if (currentDialogueIdx >= currentScene.dialogues.length) {
+            currentDialogueIdx = 0;
+            currentSceneIdx++;
+            if (currentSceneIdx >= currentEra.scenes.length) {
+                currentSceneIdx = 0;
+                currentEraIdx++;
+                if (currentEraIdx >= eras.length) {
+                    return;
+                } else {
+                    currentEra = eras[currentEraIdx];
+                    currentScene = currentEra.scenes[currentSceneIdx];
+                    currentScene.setup();
+                    currentDialogue = currentScene.dialogues[currentDialogueIdx];
+                }
+            } else {
+                currentScene = currentEra.scenes[currentSceneIdx];
+                currentScene.setup();
+                currentDialogue = currentScene.dialogues[currentDialogueIdx];
+            }
+        } else {
+            currentDialogue = currentScene.dialogues[currentDialogueIdx];
+        }
+
+        // Create all elements for the new dialogue
+        currentDialogue.display();
+        if(currentDialogue.createCustomElements) {
+            currentDialogue.createCustomElements();
+        }
     }
 }
 
-// create "next scene" button
-var nextButton = document.createElement('input');
-nextButton.type = 'button';
-nextButton.value = 'Next';
-nextButton.className = 'nextButton';
-nextButton.addEventListener('click', setNextScene);
-rightDiv.appendChild(nextButton);
+var restartGame = function() {
+    location.reload();
+}
 
-
-// var userAnswerYes = document.createElement('input');
-// userAnswerYes.type = 'button';
-// userAnswerYes.value = 'Yes';
-// userAnswerYes.className = 'userAnswer';
-// var userAnswerNo = document.createElement('input');
-// userAnswerNo.type = 'button';
-// userAnswerNo.value = 'No';
-// userAnswerNo.className = 'userAnswer';
-// rightDiv.appendChild(userAnswerYes);
-// rightDiv.appendChild(userAnswerNo);
-
+nextButton.addEventListener('click', gameStep);
+restartButton.addEventListener('click', restartGame);
 
