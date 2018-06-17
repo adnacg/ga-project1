@@ -142,6 +142,8 @@ var runGameTwo = function() {
         nextButton.style.display = 'flex';
 
         characterImg.style.display = 'flex';
+        characterImg.src = "images/character/degas.jpg";
+
         if (win) {
             bottomDiv.innerHTML = 'Degas: You truly can see.';
         } else {
@@ -302,13 +304,13 @@ var runGameFour = function() {
         characterImg.style.display = 'flex';
         characterImg.src = 'images/character/scott.jpg';
         if (win) {
-            bottomDiv.innerHTML = "(The horse won the race!)<br><br>Scott: Good'ol sport! You're definitely a worthy friend!<br>Have you met my friend Hemingway?";
+            bottomDiv.innerHTML = "(The horse you chose won the race!)<br>Scott: You got me! This is the best horse in town, I need to work on my bluff!<br>Have you met my friend Hemingway?";
         } else {
             loseCount++;
             if (loseCount >= maxLostGames) {
                 dialogueGameOver.display();
             } else {
-                bottomDiv.innerHTML = "(The horse lost!)<br><br>Scott: Aw well, such as life...<br>Ah! Oh hey, here's my friend Hemingway!";
+                bottomDiv.innerHTML = "(The horse you chose won the race!)<br>Scott: Old sport, you should stick with your guts, this horse always win!<br>Ah! Oh hey, here's my friend Hemingway!";
             }
         }
     }
@@ -401,7 +403,7 @@ var runGameFive = function() {
     var youImage = document.createElement("img");
     youImage.id = "youImage"
     youImage.className = "fightImages";
-    youImage.src = "images/character/you.jpg";
+    youImage.src = you.picture;
     youDiv.appendChild(youImage);
     var yourHPMsg = document.createElement("p");
     yourHPMsg.className = "showHPMsg"

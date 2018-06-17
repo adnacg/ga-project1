@@ -27,6 +27,24 @@ body {
   z-index: 20;
 }
 
+#man, #woman, #robot {
+  display: none;
+  width: 150px;
+  height: 150px;
+  background-color: transparent;
+  border-radius: 50%;
+  margin: 20px;
+  border: 2px solid #D5BF86;
+}
+
+#man:hover, #woman:hover, #robot:hover {
+  opacity: 0.9;
+}
+
+#man:active, #woman:active, #robot:active {
+  transform: translateY(-5px);
+}
+
 #characterImg {
   display: none;
   width: 200px;

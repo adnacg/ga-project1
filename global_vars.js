@@ -12,7 +12,19 @@ var characterImg = document.getElementById('characterImg');
 var sceneIntroMsg = document.createElement('p');
 sceneIntroMsg.className = 'sceneIntroMsg';
 sceneIntroMsg.style.display = "none";
+var userImg1 = document.createElement("img");
+userImg1.id = "woman";
+userImg1.src = "images/character/woman.jpg";
+var userImg2 = document.createElement("img");
+userImg2.id = "robot";
+userImg2.src = "images/character/robot.jpg";
+var userImg3 = document.createElement("img");
+userImg3.id = "man";
+userImg3.src = "images/character/man.jpg";
 centerDiv.appendChild(sceneIntroMsg);
+centerDiv.appendChild(userImg1);
+centerDiv.appendChild(userImg2);
+centerDiv.appendChild(userImg3);
 
 var currentEraIdx;
 var currentSceneIdx;
@@ -21,7 +33,7 @@ var freezeNextButton = false;
 var gameEnd = false;
 var loseCount = 0;
 var maxLostGames = 2;
-var buttonDelay = 1500;
+var buttonDelay = 1000;
 
 // create "next scene" button
 var nextButton = document.createElement('input');

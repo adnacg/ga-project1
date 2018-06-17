@@ -64,6 +64,14 @@ var restartGame = function() {
     location.reload();
 }
 
+var chooseCharacter = function() {
+    you.picture = "images/character/" + this.id + ".jpg";
+    gameStep();
+}
+
+userImg1.addEventListener('click', chooseCharacter);
+userImg2.addEventListener('click', chooseCharacter);
+userImg3.addEventListener('click', chooseCharacter);
 nextButton.addEventListener('click', gameStep);
 restartButton.addEventListener('click', restartGame);
 

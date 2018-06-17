@@ -1,9 +1,26 @@
 // Present
 var dialoguesParisStreet1 = [
     new Dialogue(
+        "Let's start with your character...",
+        bottomDiv,
+        undefined,
+        function() {
+            nextButton.style.display = "none";
+            userImg1.style.display = "flex";
+            userImg2.style.display = "flex";
+            userImg3.style.display = "flex";
+        },
+        function() {
+            nextButton.style.display = "flex";
+            userImg1.style.display = "none";
+            userImg2.style.display = "none";
+            userImg3.style.display = "none";
+        }
+    ),
+    new Dialogue(
         "Strolling aimlessly along the streets of Paris after nightfall, you are deep within your thoughts when you come by an open antiques shop.<br><br>Intrigued by the late opening hour, you decide to enter and have a look...",
         sceneIntroMsg
-        )
+    )
 ];
 
 var dialoguesAntiqueShop = [
@@ -35,7 +52,7 @@ var dialoguesParisStreet2 = [
             var reappear = function() {
                 sceneIntroMsg.style.color = '#000';
             }
-            setTimeout(reappear, 1000);
+            setTimeout(reappear, 800);
         }
     )
 ];
@@ -78,13 +95,13 @@ var dialoguesMoulin1 = [
         sceneIntroMsg
     ),
     new Dialogue(
-        "Hi Mr. Toulouse-Lautrec, I am such a big fan!<br>Your paintings are amazing.<br>Why did..ahem do you especially love to paint these shows?",
+        "Hi Mr. Toulouse-Lautrec, I am such a big fan!<br>I find your paintings amazing.<br>Why did you..ahem DO you especially love to paint these shows?",
         bottomDiv,
         you,
         function() {bottomDiv.style.textAlign = 'center';}
     ),
     new Dialogue(
-        "I paint things as they are.<br>A woman's body is not made for love, it is too exquisite!",
+        "I paint things as they are.<br>A woman's body is exquisite, it is meant to be painted!",
         bottomDiv,
         henri
     ),
@@ -99,12 +116,12 @@ var dialoguesMoulin1 = [
         henri
     ),
     new Dialogue(
-        "Erm... ok?",
+        "Sure, why not?",
         bottomDiv,
-        henri
+        you
     ),
     new Dialogue(
-        "Henri: Please match all my paintings within 30 seconds.",
+        "Henri: Go on and match all the pairs of my paintings.<br>You have 30 seconds.",
         bottomDiv,
         undefined,
         runGameOne,
@@ -119,7 +136,7 @@ var dialoguesMoulin2 = [
         function() {nextButton.style.display = 'flex';}
     ),
     new Dialogue(
-        "Well look at here Paul, what do you see?",
+        "Greetings friends! What a wonderful evening.<br>Come look here Paul, tell me what you see?",
         bottomDiv,
         degas,
     ),
@@ -129,9 +146,14 @@ var dialoguesMoulin2 = [
         gauguin,
     ),
     new Dialogue(
-        "Art is not what you see, but what you make others see.<br>Dear stranger, do you dare to see?",
+        "Indeed.<br>Art is not what you see, but what you make others see!<br>Stranger friend, do you dare to see?",
         bottomDiv,
         degas
+    ),
+    new Dialogue(
+        "(whispering to you)<br>Just play along, I can never follow these guys...",
+        bottomDiv,
+        henri
     ),
     new Dialogue(
         "Degas: Do you see the shapes?<br>Click on them in 5 seconds to make them disappear!",
@@ -149,12 +171,12 @@ var dialoguesMoulin3 = [
         function() {nextButton.style.display = 'flex';}
     ),
     new Dialogue(
-        "You seem to be very sensitive to shapes and colours,<br>exactly the help I need!",
+        "You seem to be very sensitive to shapes and colours,<br>exactly what I need, come with me!",
         bottomDiv,
         coco
     ),
     new Dialogue(
-        "Chanel: In order to be irreplaceable in fashion, one must dare to be different.<br><br>Can you help me to choose a logo for my fashion brand?",
+        "Chanel: In order to be irreplaceable in fashion, one must dare to be different.<br>Can you help me to choose a logo for my fashion brand?<br>I already have a favourite but I am doubting myself.",
         bottomDiv,
         undefined,
         runGameThree
@@ -184,7 +206,7 @@ var scenesBelleEpoque = [
 
 var dialoguesJazzBar1 = [
     new Dialogue(
-        "The watch shines again...!<br>The watchface seems... changed again?<br><br>Wait... why are you in a bar?<br>Is it... 1920!?",
+        "It seems you moved through time again. The watchface now shows... 1920!<br><br>Seems like you are in a bar? One of the rings of the watch is filled up again.<br><br>Maybe you can come back to your time if the last one fills up too..?",
         sceneIntroMsg,
         undefined,
         function() {
@@ -229,12 +251,12 @@ var dialoguesJazzBar1 = [
         scott
     ),
     new Dialogue(
-        "I guess... ok then.",
+        "Alright then!",
         bottomDiv,
         you
     ),
     new Dialogue(
-        "Scott: All these horses look fine!<br>Which one do you think is going to win?",
+        "Scott: All these horses look fine. Let's make a bet!<br>Which one do you think is going to win?",
         bottomDiv,
         undefined,
         runGameFour
@@ -258,7 +280,7 @@ var dialoguesJazzBar2 = [
         you
     ),
     new Dialogue(
-        "Well that's something all men before you have done,<br>and all men will do!",
+        "Well that's something all men before you have done,<br>and all men will do!<br>Just do not write, then!",
         bottomDiv,
         hemingway
     ),
@@ -268,12 +290,12 @@ var dialoguesJazzBar2 = [
         hemingway
     ),
     new Dialogue(
-        "What...? I supposed I do too.",
+        "I cannot say that I do.",
         bottomDiv,
         you
     ),
     new Dialogue(
-        "Let's put the gloves on and settle it then!",
+        "(ignoring you) Let's put the gloves on<br>and settle it then!",
         bottomDiv,
         hemingway
     ),
@@ -287,7 +309,7 @@ var dialoguesJazzBar2 = [
 
 var dialoguesRestaurant1 = [
     new Dialogue(
-        "You left the bar and walk aimlessly on the streets...<br><br>You are thinking about what to do next... when a sound coming from a restaurant caught your attention.",
+        "You leave the bar and walk aimlessly on the streets...<br><br>Unsure what to do next, you hear a sound coming from a restaurant.",
         sceneIntroMsg,
         undefined
     ),
@@ -297,12 +319,12 @@ var dialoguesRestaurant1 = [
         dali
     ),
     new Dialogue(
-        "Erm... are you talking to me?",
+        "Are you... talking to me?",
         bottomDiv,
         you
     ),
     new Dialogue(
-        "(Dali signals you into the restaurant... so you did)",
+        "(Dali signals you into the restaurant... and you decide to enter)",
         bottomDiv
     )
 ]
@@ -324,12 +346,12 @@ var dialoguesRestaurant2 = [
         dali
     ),
     new Dialogue(
-        "I am here, to paint the Rhinocerous!<br>I can paint you too, si, you have the very sad eyes...<br>like Rhinocerous!",
+        "I am here to paint the Rhinocerous!<br>I can paint you too, si, you have the very sad eyes...<br>like Rhinocerous!",
         bottomDiv,
         dali
     ),
     new Dialogue(
-        "Yes indeed I am! I'm in a very perplexing situation...<br>one where I seem to be present in the past<br>but actually from the future!",
+        "Yes indeed I am! See, I'm in a very perplexing situation...<br>one where I seem to be present in the past<br>but actually from the future!",
         bottomDiv,
         you
     ),
@@ -338,17 +360,17 @@ var dialoguesRestaurant2 = [
         bottomDiv,
     ),
     new Dialogue(
-        "Ah senior Man Ray and senior Bunuel! My friends!<br>This person said that he is from the future!",
+        "Ah senior Man Ray and senior Bunuel! My friends!<br>This gentleman says that he is from the future!",
         bottomDiv,
         dali
     ),
     new Dialogue(
-        "Exactly correct,<br>you've inherit two worlds, like a photograph.<br>So far, I see nothing strange!",
+        "Exactly correct,<br>you inhabit two worlds, like a photograph.<br>So far, I see nothing strange!",
         bottomDiv,
         manray
     ),
     new Dialogue(
-        "Yeah but that's because you're a surrealist,<br>and I'm a normal person!<br> I see an insurmountable pain!",
+        "Yeah but that's because you're a surrealist,<br>and I'm a normal person!<br>What I see is an insurmountable situation!",
         bottomDiv,
         you
     ),
@@ -369,15 +391,22 @@ var dialoguesRestaurant2 = [
         runGameSix
     ),
     new Dialogue(
+        "After leaving Dali and his friends, you suddenly realise that the third disc of the watch is now filled.<br>Maybe you can now return to your time?!<br><br>With great care, you press the watch button...",
+        sceneIntroMsg,
+        undefined,
+        function() {
+            watch.style.display = "flex";
+            watch.src = 'images/watch_twenties_end.png';
+        }
+    ),
+    new Dialogue(
         "",
         sceneIntroMsg,
         undefined,
         function() {
             centerDiv.style.display = "none";
-            watch.style.display = "flex";
-            watch.src = 'images/watch_twenties_end.png';
             watch.style.backgroundColor = "#fff";
-            setTimeout(function(){watch.style.boxShadow = '0 0 90px 1000px #fff, 0 0 200px 300px #ece20a'}, 500);
+            watch.style.boxShadow = '0 0 90px 1000px #fff, 0 0 200px 300px #ece20a';
         }
     ),
 ]
@@ -393,7 +422,7 @@ var scenesTwenties = [
 
 var dialoguesParis = [
     new Dialogue(
-        "The watch shines again and now... what?!<br>you are back on the streets in the present Paris.<br><br>As you ponder about what just happened... the rain started drizzling down from the sky.",
+        "You look around, and it seems like it worked!<br>You are back on the streets in the present Paris.<br><br>As you ponder about what just happened... the rain starts drizzling down from the sky.",
         sceneIntroMsg,
         undefined,
         function() {
@@ -412,12 +441,12 @@ var dialoguesParis = [
         bottomDiv,
     ),
     new Dialogue(
-        "Hello...<br>would you like me to share the umbrella?",
+        "Hello...<br>would you like to share this umbrella with me?",
         bottomDiv,
         gabrielle
     ),
     new Dialogue(
-        "oh yes... thank you so much!<br>Who would've known that rain comes so suddenly...",
+        "Oh yes... thank you so much!<br>Who would've known that rain would come so suddenly...",
         bottomDiv,
         you
     ),
