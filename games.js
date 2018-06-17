@@ -433,7 +433,7 @@ var runGameFive = function() {
         }
 
         if (fightOutcome == "won") {
-            bottomDiv.innerHTML = "Hemingway: A real man fights! And a greater man like you wins with honour!";
+            bottomDiv.innerHTML = "Hemingway: A real man fights!<br>And a greater man like you wins with honour!";
         } else if (fightOutcome = "lost") {
             loseCount++;
             if (loseCount >= maxLostGames) {

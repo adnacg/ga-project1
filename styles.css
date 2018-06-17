@@ -295,15 +295,16 @@ body {
 }
 
 .horseConfirm {
-  border: 1px solid #fff;
+  font-family: 'Fondamento', cursive;
+  border: 1px solid #D5BF86;
   border-radius: 50%;
   cursor: pointer;
   text-align: center;
   padding: 10px;
   font-size: 15px;
   margin-left: 20px;
-  color: #fff;
-  background-color: #333333;
+  color: #000;
+  background-color: #D5BF86;
 }
 
 .horseConfirm:active {
@@ -325,14 +326,14 @@ body {
 }
 
 .showHPMsg {
-  color: #fff;
+  color: #D5BF86;
   margin-top: 20px;
   width: 150px;
   text-align: center;
 }
 
 .actualHP {
-  color: #fff;
+  color: #D5BF86;
   margin-top: 20px;
   width: 150px;
   text-align: center;
@@ -343,14 +344,15 @@ body {
 }
 
 .fightButtons {
+  font-family: 'Fondamento', cursive;
   display: block;
-  border: 1px solid #D3D3D3;
+  border: 1px solid #D5BF86;
   border-radius: 5px;
   cursor: pointer;
   width: 100px;
   height: 35px;
   font-size: 15px;
-  color: #fff;
+  color: #D5BF86;
   background-color: #89341f;
   margin-top: 20px;
 }
@@ -391,23 +393,27 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
   border-radius: 50%;
-  border: 5px solid #fff;
+  border: 2px solid #D5BF86;
 }
 
 .daliGameSelections {
+  font-family: 'Fondamento', cursive;
   z-index: 25;
-  font-size: 15px;
+  font-size: 18px;
+  height: 30px;
+  background-color: #D5BF86;
 }
 
 #daliGameSubmit {
+  font-family: 'Fondamento', cursive;
   z-index: 25;
   cursor: pointer;
   text-align: center;
   padding: 10px;
-  font-size: 15px;
-  color: #fff;
-  background-color: #333333;
-  border: 1px solid #D3D3D3;
+  font-size: 18px;
+  color: #000;
+  background-color: #D5BF86;
+  border: 1px solid #D5BF86;
   border-radius: 50%;
   margin-left: 20px;
 }

@@ -1,4 +1,5 @@
-function Character(picture) {
+function Character(name, picture) {
+    this.name = name;
     this.picture = picture;
 }
 
@@ -25,17 +26,20 @@ function Dialogue(sentence, location, character=undefined, createCustomElements=
 
     this.display = function(){
         this.location.style.display = "flex";
-        this.location.innerHTML = this.sentence;
         if (this.location.className == "bottomDiv") {
             topDiv.style.display = "flex";
         }
         rightDiv.style.display = "flex";
         leftDiv.style.display = "flex";
 
+        var text = this.sentence;
         if (character) {
+            var characterName = this.character.name;
+            text = characterName + ": " + text;
             characterImg.style.display = "flex";
             characterImg.src = this.character.picture;
         }
+        this.location.innerHTML = text;
     };
 
     this.clear = function() {

@@ -78,28 +78,28 @@ var dialoguesMoulin1 = [
         sceneIntroMsg
     ),
     new Dialogue(
-        "You: Hi Mr. Toulouse-Lautrec, I am such a big fan!<br>Your paintings are amazing.<br>Why did..ahem do you especially love to paint these shows?",
+        "Hi Mr. Toulouse-Lautrec, I am such a big fan!<br>Your paintings are amazing.<br>Why did..ahem do you especially love to paint these shows?",
         bottomDiv,
         you,
         function() {bottomDiv.style.textAlign = 'center';}
     ),
     new Dialogue(
-        "Henri: I paint things as they are.<br>A woman's body is not made for love, it is too exquisite!",
+        "I paint things as they are.<br>A woman's body is not made for love, it is too exquisite!",
         bottomDiv,
         henri
     ),
     new Dialogue(
-        "You: I agree!",
+        "I agree!",
         bottomDiv,
         you
     ),
     new Dialogue(
-        "Henri: Would you like to play a game?",
+        "Would you like to play a game?",
         bottomDiv,
         henri
     ),
     new Dialogue(
-        "You: Erm... ok?",
+        "Erm... ok?",
         bottomDiv,
         henri
     ),
@@ -113,18 +113,23 @@ var dialoguesMoulin1 = [
 
 var dialoguesMoulin2 = [
     new Dialogue(
-        "(Edgar Degas and Paul Gauguin walk over...)<br><br>Degas: Well look at here Paul, what do you see?",
+        "(Edgar Degas and Paul Gauguin walk over...)",
         bottomDiv,
-        degas,
+        undefined,
         function() {nextButton.style.display = 'flex';}
     ),
     new Dialogue(
-        "Gauguin: I shut my eyes in order to see.",
+        "Well look at here Paul, what do you see?",
+        bottomDiv,
+        degas,
+    ),
+    new Dialogue(
+        "I shut my eyes in order to see.",
         bottomDiv,
         gauguin,
     ),
     new Dialogue(
-        "Degas: Art is not what you see, but what you make others see.<br>Dear stranger, do you dare to see?",
+        "Art is not what you see, but what you make others see.<br>Dear stranger, do you dare to see?",
         bottomDiv,
         degas
     ),
@@ -144,7 +149,7 @@ var dialoguesMoulin3 = [
         function() {nextButton.style.display = 'flex';}
     ),
     new Dialogue(
-        "Chanel: You seem to be very sensitive to shapes and colours,<br>exactly the help I need!",
+        "You seem to be very sensitive to shapes and colours,<br>exactly the help I need!",
         bottomDiv,
         coco
     ),
@@ -194,37 +199,37 @@ var dialoguesJazzBar1 = [
         function() {watch.style.display = "none";}
     ),
     new Dialogue(
-        "Scott: Hello my friend , you seem lost, are you lost?",
+        "Hello my friend , you seem lost, are you lost?",
         bottomDiv,
         scott
     ),
     new Dialogue(
-        "You: ... I guess, I am just not exacly sure where I am?",
+        "... I guess, I am just not exacly sure where I am?",
         bottomDiv,
         you
     ),
     new Dialogue(
-        "Scott: Well my friend, you are at the biggest party in town!<br>I am Scott Fitzerald, and this is my wife, Zelda.",
+        "Well my friend, you are at the biggest party in town!<br>I am Scott Fitzerald, and this is my wife, Zelda.",
         bottomDiv,
         scott
     ),
     new Dialogue(
-        "You: ... You are THE Fitzgeralds!? This is so... so...",
+        "... You are THE Fitzgeralds!? This is so... so...",
         bottomDiv,
         you
     ),
     new Dialogue(
-        "Zelda: I know, this is so boring!<br>The party is boring, I am bored, he is bored, you are bored!<br>Lets go somewhere else!",
+        "I know, this is so boring!<br>The party is boring, I am bored, he is bored, you are bored!<br>Lets go somewhere else!",
         bottomDiv,
         zelda
     ),
     new Dialogue(
-        "Scott: I know! Lets go to the race course!",
+        "I know! Lets go to the race course!",
         bottomDiv,
         scott
     ),
     new Dialogue(
-        "You: I guess... ok then.",
+        "I guess... ok then.",
         bottomDiv,
         you
     ),
@@ -238,37 +243,37 @@ var dialoguesJazzBar1 = [
 
 var dialoguesJazzBar2 = [
     new Dialogue(
-        "You: Oh Mr. Hemingway! I am such a fan.<br>How do you write so well?",
+        "Oh Mr. Hemingway! I am such a fan.<br>How do you write so well?",
         bottomDiv,
         you
     ),
     new Dialogue(
-        "Hemingway: You will never write well if you fear dying.<br>Do you fear death?",
+        "You will never write well if you fear dying.<br>Do you fear death?",
         bottomDiv,
         hemingway
     ),
     new Dialogue(
-        "You: I supposed I do...",
+        "I supposed I do...",
         bottomDiv,
         you
     ),
     new Dialogue(
-        "Hemingway: Well that's something all men before you have done,<br>and all men will do!",
+        "Well that's something all men before you have done,<br>and all men will do!",
         bottomDiv,
         hemingway
     ),
     new Dialogue(
-        "Hemingway: Tell me, my friend. Do you box?",
+        "Tell me, my friend. Do you box?",
         bottomDiv,
         hemingway
     ),
     new Dialogue(
-        "You: What...? I supposed I do too.",
+        "What...? I supposed I do too.",
         bottomDiv,
         you
     ),
     new Dialogue(
-        "Hemingway: Let's put the gloves on and settle it then!",
+        "Let's put the gloves on and settle it then!",
         bottomDiv,
         hemingway
     ),
@@ -287,12 +292,12 @@ var dialoguesRestaurant1 = [
         undefined
     ),
     new Dialogue(
-        "Dali: Psst psst! Bonjour Monsieur!",
+        "Psst psst! Bonjour Monsieur!",
         bottomDiv,
         dali
     ),
     new Dialogue(
-        "You: Erm... are you talking to me?",
+        "Erm... are you talking to me?",
         bottomDiv,
         you
     ),
@@ -304,52 +309,56 @@ var dialoguesRestaurant1 = [
 
 var dialoguesRestaurant2 = [
     new Dialogue(
-        "Dali: Yes! I am Dali! Dali!<br>You look lost monsieur, in the city of love, Paris!",
+        "Yes! I am Dali! Dali!<br>You look lost monsieur, in the city of love, Paris!",
         bottomDiv,
         dali
     ),
     new Dialogue(
-        "You: Dali... the painter Salvador Dali!?",
+        "Dali... the painter Salvador Dali!?",
         bottomDiv,
         you
     ),
     new Dialogue(
-        "Dali: Si monsieur, I love French, so magical, it's love!<br>The waiter, no.",
+        "Si monsieur, I love French, so magical, it's love!<br>The waiter, no.",
         bottomDiv,
         dali
     ),
     new Dialogue(
-        "Dali: I am here, to paint the Rhinocerous!<br>I can paint you too, si, you have the very sad eyes...<br>like Rhinocerous!",
+        "I am here, to paint the Rhinocerous!<br>I can paint you too, si, you have the very sad eyes...<br>like Rhinocerous!",
         bottomDiv,
         dali
     ),
     new Dialogue(
-        "You: Yes indeed I am! I'm in a very perplexing situation...<br>one where I seem to be present in the past<br>but actually from the future!",
+        "Yes indeed I am! I'm in a very perplexing situation...<br>one where I seem to be present in the past<br>but actually from the future!",
         bottomDiv,
         you
     ),
     new Dialogue(
-        "(Turns to Man Ray and Luis Bunuel sitting nearby)<br><br>Dali: Ah senior Man Ray and senior Bunuel! My friends!<br>This person said that he is from the future!",
+        "(Dali turns to Man Ray and Luis Bunuel sitting nearby)",
+        bottomDiv,
+    ),
+    new Dialogue(
+        "Ah senior Man Ray and senior Bunuel! My friends!<br>This person said that he is from the future!",
         bottomDiv,
         dali
     ),
     new Dialogue(
-        "Man Ray: Exactly correct,<br>you've inherit two worlds, like a photograph.<br>So far, I see nothing strange!",
+        "Exactly correct,<br>you've inherit two worlds, like a photograph.<br>So far, I see nothing strange!",
         bottomDiv,
         manray
     ),
     new Dialogue(
-        "You: Yeah but that's because you're a surrealist,<br>and I'm a normal person!<br> I see an insurmountable pain!",
+        "Yeah but that's because you're a surrealist,<br>and I'm a normal person!<br> I see an insurmountable pain!",
         bottomDiv,
         you
     ),
     new Dialogue(
-        "Bunuel: I see... a film!",
+        "I see... a film!",
         bottomDiv,
         luis
     ),
     new Dialogue(
-        "Dali: I see a big... Rhinocerous!",
+        "I see a big... Rhinocerous!",
         bottomDiv,
         dali
     ),
@@ -403,19 +412,19 @@ var dialoguesParis = [
         bottomDiv,
     ),
     new Dialogue(
-        "Parisian Girl: Hello... would you like me to share the umbrella with me?",
+        "Hello...<br>would you like me to share the umbrella?",
         bottomDiv,
-        stranger
+        gabrielle
     ),
     new Dialogue(
-        "You: oh yes... thank you so much!<br>Who would've known that rain comes so suddenly...",
+        "oh yes... thank you so much!<br>Who would've known that rain comes so suddenly...",
         bottomDiv,
         you
     ),
     new Dialogue(
-        "Parisian Girl: Yes, but I like to walk under the rain sometimes.<br><br>Paris is the most beautiful in the rain.",
+        "Yes, but I like to walk under the rain sometimes.<br><br>Paris is the most beautiful in the rain.",
         bottomDiv,
-        stranger
+        gabrielle
     ),
     new Dialogue(
         "The End",
