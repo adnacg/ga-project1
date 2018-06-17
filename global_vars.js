@@ -21,6 +21,7 @@ var freezeNextButton = false;
 var gameEnd = false;
 var loseCount = 0;
 var maxLostGames = 2;
+var buttonDelay = 1500;
 
 // create "next scene" button
 var nextButton = document.createElement('input');
@@ -29,9 +30,10 @@ nextButton.value = 'Next';
 nextButton.className = 'nextButton';
 rightDiv.appendChild(nextButton);
 
+
 // create "restart game" button
 var restartButton = document.createElement('input');
 restartButton.type = 'button';
 restartButton.value = 'Restart';
 restartButton.className = 'restartButton';
-centerDiv.appendChild(restartButton);
+rightDiv.appendChild(restartButton);

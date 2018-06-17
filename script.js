@@ -2,17 +2,15 @@ currentEraIdx = 0;
 currentSceneIdx = 0;
 currentDialogueIdx = -1;
 
-// eras[currentEraIdx].scenes[currentSceneIdx].dialogues[currentDialogueIdx].display();
-
 var gameStep = function() {
     if (!freezeNextButton) {
 
         freezeNextButton = true;
-        nextButton.style.backgroundColor = "#e2dfb5";
+        nextButton.style.color = "#D5BF86";
         setTimeout(function() {
             freezeNextButton = false;
-            nextButton.style.backgroundColor = "#ddce5d";
-        }, 2000);
+            nextButton.style.color = "#000";
+        }, buttonDelay);
 
         var currentEra = eras[currentEraIdx];
         var currentScene = currentEra.scenes[currentSceneIdx];
@@ -28,7 +26,6 @@ var gameStep = function() {
             bottomDiv.style.display = 'none';
             nextButton.style.display = 'flex';
         }
-
 
         // Update the "current" dialogue
         currentDialogueIdx++;

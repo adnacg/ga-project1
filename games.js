@@ -147,6 +147,7 @@ var runGameTwo = function() {
         } else {
             loseCount++;
             if (loseCount >= maxLostGames) {
+                dialogueGameOver.createCustomElements();
                 dialogueGameOver.display();
             } else {
                 bottomDiv.innerHTML = 'Degas: Well, not all can see, certainly not all can make others see!';
@@ -420,6 +421,7 @@ var runGameFive = function() {
         youDiv.parentNode.removeChild(youDiv);
         gameBoard.style.display = "none";
         nextButton.style.display = 'flex';
+        characterImg.style.display = "flex";
         characterImg.src = "images/character/hemingway.jpg";
 
         if (userHP <= 0 && hemingwayHP <= 0) {
@@ -570,6 +572,7 @@ var runGameSix = function() {
         daliDiv.style.display = "none";
         bunuelDiv.style.display = "none";
         gameBoard.style.display = "none";
+        characterImg.style.display = "flex";
         characterImg.src = "images/character/dali.jpg";
 
         if (win) {

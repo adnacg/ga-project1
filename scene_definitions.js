@@ -35,7 +35,7 @@ var dialoguesParisStreet2 = [
             var reappear = function() {
                 sceneIntroMsg.style.color = '#000';
             }
-            setTimeout(reappear, 2000);
+            setTimeout(reappear, 1000);
         }
     )
 ];
@@ -60,10 +60,10 @@ var dialoguesMoulin1 = [
 
             var reappear = function() {
                 sceneIntroMsg.style.backgroundColor = '#000';
-                sceneIntroMsg.style.color = '#fff';
+                sceneIntroMsg.style.color = '#D5BF86';
             }
 
-            setTimeout(reappear, 2000);
+            setTimeout(reappear, 1300);
         }
     ),
     new Dialogue(
@@ -78,19 +78,28 @@ var dialoguesMoulin1 = [
         sceneIntroMsg
     ),
     new Dialogue(
-        "You: Hi Mr. Toulouse-Lautrec, I am such a big fan! Your paintings are amazing.<br>Why did..ahem do you especially love to paint these shows?",
+        "You: Hi Mr. Toulouse-Lautrec, I am such a big fan!<br>Your paintings are amazing.<br>Why did..ahem do you especially love to paint these shows?",
         bottomDiv,
         you,
         function() {bottomDiv.style.textAlign = 'center';}
     ),
     new Dialogue(
-        "Henri: I paint things as they are. A woman's body is not made for love, it is too exquisite!<br><br>You: I agree.",
+        "Henri: I paint things as they are.<br>A woman's body is not made for love, it is too exquisite!",
         bottomDiv,
-        henri,
-        function() {watch.style.boxShadow = '0 0 40px 10px #fff';}
+        henri
+    ),
+    new Dialogue(
+        "You: I agree!",
+        bottomDiv,
+        you
     ),
     new Dialogue(
         "Henri: Would you like to play a game?",
+        bottomDiv,
+        henri
+    ),
+    new Dialogue(
+        "You: Erm... ok?",
         bottomDiv,
         henri
     ),
@@ -104,7 +113,7 @@ var dialoguesMoulin1 = [
 
 var dialoguesMoulin2 = [
     new Dialogue(
-        "(Edgar Degas and Paul Gauguin saw your game and walked over...)<br><br>Degas: Well look at here Paul, what do you see?",
+        "(Edgar Degas and Paul Gauguin walk over...)<br><br>Degas: Well look at here Paul, what do you see?",
         bottomDiv,
         degas,
         function() {nextButton.style.display = 'flex';}
@@ -115,7 +124,7 @@ var dialoguesMoulin2 = [
         gauguin,
     ),
     new Dialogue(
-        "Degas: Art is not what you see, but what you make others see.<br><br>Dear stranger, do you dare to see?",
+        "Degas: Art is not what you see, but what you make others see.<br>Dear stranger, do you dare to see?",
         bottomDiv,
         degas
     ),
@@ -129,13 +138,18 @@ var dialoguesMoulin2 = [
 
 var dialoguesMoulin3 = [
     new Dialogue(
-        "(Coco Chanel passes by and is pleasantly surprised by your talent)<br><br>Chanel: You seem to be very sensitive to shapes and colours - exactly the help I need!",
+        "(Coco Chanel passes by and is pleasantly surprised by your talent)",
         bottomDiv,
-        coco,
+        undefined,
         function() {nextButton.style.display = 'flex';}
     ),
     new Dialogue(
-        "Gauguin: I shut my eyes in order to see.",
+        "Chanel: You seem to be very sensitive to shapes and colours,<br>exactly the help I need!",
+        bottomDiv,
+        coco
+    ),
+    new Dialogue(
+        "Chanel: In order to be irreplaceable in fashion, one must dare to be different.<br><br>Can you help me to choose a logo for my fashion brand?",
         bottomDiv,
         undefined,
         runGameThree
@@ -149,7 +163,7 @@ var dialoguesMoulin3 = [
             watch.style.display = "flex";
             watch.style.backgroundColor = "#fff";
             watch.src = 'images/watch_belle_epoque_end.png';
-            watch.style.boxShadow = '0 0 90px 1000px #fff, 0 0 200px 300px #ece20a';
+            setTimeout(function(){watch.style.boxShadow = '0 0 90px 1000px #fff, 0 0 200px 300px #ece20a'}, 500);
         }
     )
 ]
@@ -165,7 +179,7 @@ var scenesBelleEpoque = [
 
 var dialoguesJazzBar1 = [
     new Dialogue(
-        "The watch shines again...!<br>This time, you see that the watchface seems to be a little different.<br><br>Wait... why are you in a bar?<br>Is it... 1920!?",
+        "The watch shines again...!<br>The watchface seems... changed again?<br><br>Wait... why are you in a bar?<br>Is it... 1920!?",
         sceneIntroMsg,
         undefined,
         function() {
@@ -200,7 +214,7 @@ var dialoguesJazzBar1 = [
         you
     ),
     new Dialogue(
-        "Zelda: I know, this is so boring!<br>The party is boring, I am bored, he is bored, you are bored! Lets go somewhere else!",
+        "Zelda: I know, this is so boring!<br>The party is boring, I am bored, he is bored, you are bored!<br>Lets go somewhere else!",
         bottomDiv,
         zelda
     ),
@@ -239,7 +253,7 @@ var dialoguesJazzBar2 = [
         you
     ),
     new Dialogue(
-        "Hemingway: Well that's something all men before you have done, and all men will do!",
+        "Hemingway: Well that's something all men before you have done,<br>and all men will do!",
         bottomDiv,
         hemingway
     ),
@@ -266,7 +280,7 @@ var dialoguesJazzBar2 = [
     )
 ]
 
-var dialoguesRestaurant = [
+var dialoguesRestaurant1 = [
     new Dialogue(
         "You left the bar and walk aimlessly on the streets...<br><br>You are thinking about what to do next... when a sound coming from a restaurant caught your attention.",
         sceneIntroMsg,
@@ -283,22 +297,34 @@ var dialoguesRestaurant = [
         you
     ),
     new Dialogue(
-        "(Dali signals you into the restaurant)<br><br>Dali: Yes! I am Dali! You look lost monsieur, in the city of love, Paris!",
+        "(Dali signals you into the restaurant... so you did)",
+        bottomDiv
+    )
+]
+
+var dialoguesRestaurant2 = [
+    new Dialogue(
+        "Dali: Yes! I am Dali! Dali!<br>You look lost monsieur, in the city of love, Paris!",
         bottomDiv,
         dali
     ),
     new Dialogue(
-        "You: Dali... the painter!?",
+        "You: Dali... the painter Salvador Dali!?",
         bottomDiv,
         you
     ),
     new Dialogue(
-        "Dali: Si monsieur, I love French, so magical, it's love! The waiter, no.<br>I am here, to paint the Rhinocerous!<br>I can paint you too, si, you have the very sad eyes... like Rhinocerous!",
+        "Dali: Si monsieur, I love French, so magical, it's love!<br>The waiter, no.",
         bottomDiv,
         dali
     ),
     new Dialogue(
-        "You: Yes indeed I am! I'm in a very perplexing situation...<br>one where I seem to be present in the past but actually from the future!",
+        "Dali: I am here, to paint the Rhinocerous!<br>I can paint you too, si, you have the very sad eyes...<br>like Rhinocerous!",
+        bottomDiv,
+        dali
+    ),
+    new Dialogue(
+        "You: Yes indeed I am! I'm in a very perplexing situation...<br>one where I seem to be present in the past<br>but actually from the future!",
         bottomDiv,
         you
     ),
@@ -308,12 +334,12 @@ var dialoguesRestaurant = [
         dali
     ),
     new Dialogue(
-        "Man Ray: Exactly correct, you've inherit two worlds, like a photograph.<br>So far, I see nothing strange!",
+        "Man Ray: Exactly correct,<br>you've inherit two worlds, like a photograph.<br>So far, I see nothing strange!",
         bottomDiv,
         manray
     ),
     new Dialogue(
-        "You: Yeah but that's because you're a surrealist, and I'm a normal guy!<br> I see an insurmountable pain!",
+        "You: Yeah but that's because you're a surrealist,<br>and I'm a normal person!<br> I see an insurmountable pain!",
         bottomDiv,
         you
     ),
@@ -323,12 +349,12 @@ var dialoguesRestaurant = [
         luis
     ),
     new Dialogue(
-        "Dali: I see a big Rhinocerous!",
+        "Dali: I see a big... Rhinocerous!",
         bottomDiv,
         dali
     ),
     new Dialogue(
-        "What do they see, when you say that you are from the future?<br><br>Select the correct number under the respective artists (Man Ray, Salvador Dali, Luis Bunuel).<input type='button' id='daliGameSubmit' value='Done!''></input>",
+        "Select the correct image in the head of the respective artists<br>(Man Ray, Salvador Dali, Luis Bunuel).<input type='button' id='daliGameSubmit' value='Done!''></input>",
         bottomDiv,
         undefined,
         runGameSix
@@ -342,7 +368,7 @@ var dialoguesRestaurant = [
             watch.style.display = "flex";
             watch.src = 'images/watch_twenties_end.png';
             watch.style.backgroundColor = "#fff";
-            watch.style.boxShadow = '0 0 90px 1000px #fff, 0 0 200px 300px #ece20a';
+            setTimeout(function(){watch.style.boxShadow = '0 0 90px 1000px #fff, 0 0 200px 300px #ece20a'}, 500);
         }
     ),
 ]
@@ -350,16 +376,15 @@ var dialoguesRestaurant = [
 var scenesTwenties = [
     new Scene(dialoguesJazzBar1, "images/1920.jpg"),
     new Scene(dialoguesJazzBar2, "images/1920.jpg"),
-    new Scene(dialoguesRestaurant, "images/1920.jpg"),
-    // TODO change image + change colour of buttons + align texts to fit in bottomDiv + restart on game end
-    // TODO add initialization function for global variables
+    new Scene(dialoguesRestaurant1, "images/polidor.jpg"),
+    new Scene(dialoguesRestaurant2, "images/insidepolidor.jpg"),
 ];
 
 // Ending
 
 var dialoguesParis = [
     new Dialogue(
-        "The watch shines again and now... what?!<br>you are back on the streets in the present Paris.<br><br>As you ponder what just happened... the rain started drizzling down from the sky.",
+        "The watch shines again and now... what?!<br>you are back on the streets in the present Paris.<br><br>As you ponder about what just happened... the rain started drizzling down from the sky.",
         sceneIntroMsg,
         undefined,
         function() {
@@ -374,7 +399,11 @@ var dialoguesParis = [
         function() {watch.style.display = "none";}
     ),
     new Dialogue(
-        "(A girl approaches you.)<br><br>Parisian Girl: Hello... would you like me to share the umbrella with me?",
+        "(A girl approaches you.)",
+        bottomDiv,
+    ),
+    new Dialogue(
+        "Parisian Girl: Hello... would you like me to share the umbrella with me?",
         bottomDiv,
         stranger
     ),
@@ -401,7 +430,7 @@ var scenesEnding = [
 ];
 
 var dialogueGameOver = new Dialogue(
-    "Sorry, you've lost too many rounds... seems like you're stuck here forever!",
+    "Sorry, you've lost too many rounds...<br>seems like you're stuck here forever!",
     sceneIntroMsg,
     undefined,
     function() {
@@ -425,4 +454,3 @@ var eras = [
     new Era(scenesTwenties),
     new Era(scenesEnding)
 ];
-
